@@ -1,0 +1,721 @@
+{
+  "Uuid": "d3925ce8-ba39-4af6-8f06-ad2f5f232bcb",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Estudo de exportação de tabelas",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 485,
+      "SelectedString": "OST_Walls",
+      "NodeType": "ExtensionNode",
+      "Id": "c5a109e931b84ca98214e92d0d664796",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "834d2f99366d455f9a35275920748d18",
+          "Name": "Category",
+          "Description": "A categoria selecionada.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todas as categorias incorporadas."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "6a120071720342a384522b78bd557ff3",
+      "Inputs": [
+        {
+          "Id": "3704f0a4cf3c40889a0285e81db30c58",
+          "Name": "",
+          "Description": "Nó para avaliar.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "735a62e1ebcb46239312f8372a51c9de",
+          "Name": "",
+          "Description": "Observar conteúdo.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize a saída do nó."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 485,
+      "SelectedString": "OST_Walls",
+      "NodeType": "ExtensionNode",
+      "Id": "461ffd68ead948cda08c49b1c8191fcf",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "13db934207bc4e31ad92135af638aa74",
+          "Name": "Category",
+          "Description": "A categoria selecionada.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todas as categorias incorporadas."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "7b3ff7daf7e14225b6c08b74ee08a7a8",
+      "Inputs": [
+        {
+          "Id": "28725f392fec44e392c8b8de0314f67e",
+          "Name": "Category",
+          "Description": "Categoria",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "98100ee404d64c7bb2215f74f7c6eee6",
+          "Name": "Elements",
+          "Description": "Um tipo de elemento.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Obter todos os elementos da categoria especificada no modelo."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.WallTypes, DSRevitNodesUI",
+      "SelectedIndex": 24,
+      "SelectedString": "Parede de alvenaria",
+      "NodeType": "ExtensionNode",
+      "Id": "7b205623c8f549a78887a59f18ae3b89",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "22610cdef7b846a7a7c5804d0b117da8",
+          "Name": "Wall Type",
+          "Description": "O Wall Type selecionado",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todos os tipos de parede disponíveis no documento."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Views.ScheduleView.Export@string,Revit.Schedules.ScheduleExportOptions",
+      "Id": "2ade6f2a010241eea7a1c8a01d0f7cfe",
+      "Inputs": [
+        {
+          "Id": "a45102ccdc254df0ad006027f844e174",
+          "Name": "scheduleView",
+          "Description": "Revit.Elements.Views.ScheduleView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1f9432c0fc5e48a9a48910ceb8b9ca01",
+          "Name": "path",
+          "Description": "Um caminho de arquivo válido com a extensão de arquivo.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5d8b7cd622ba4c1cb6bd27e68582b42c",
+          "Name": "exportOptions",
+          "Description": "Opções de exportação.\n\nScheduleExportOptions",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "20ae34312f694bebad40c3a1f093d97d",
+          "Name": "scheduleView",
+          "Description": "Vista de tabela.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Exportar tabela da vista para CSV, TSV etc.\n\nScheduleView.Export (path: string, exportOptions: ScheduleExportOptions): ScheduleView"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Views, DSRevitNodesUI",
+      "SelectedIndex": 7,
+      "SelectedString": "Levantamento do material de parede",
+      "NodeType": "ExtensionNode",
+      "Id": "a10872d99a784f138a8193c21b319730",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b2f84da02ab6471aa1c6ef1cbeadb155",
+          "Name": "Views",
+          "Description": "O Views selecionado",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todas as vistas disponíveis no documento atual."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ViewFamilyTypes, DSRevitNodesUI",
+      "SelectedIndex": 18,
+      "SelectedString": "Tabela",
+      "NodeType": "ExtensionNode",
+      "Id": "f0e3fd188d75444e8865adda72387762",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "017263d2053e496b996cce30b946c856",
+          "Name": "ViewFamilyType",
+          "Description": "O ViewFamilyType selecionado",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todos os tipos de família de vistas no documento atual."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "list[22]. Name+ \"this is a new test.csv\";\nlist;",
+      "Id": "6564a720e6f146bcb2e43fecc8de7b4a",
+      "Inputs": [
+        {
+          "Id": "639b7a0ae579403fb79f5007b35e4f51",
+          "Name": "list",
+          "Description": "list",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1030bdc4f51a43f5814f2da3ab1119b3",
+          "Name": "",
+          "Description": "Valor da expressão na linha 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ebc49f911fa5400a9f1265fbac5ddc12",
+          "Name": "",
+          "Description": "Valor da expressão na linha 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite que o código DesignScript seja criado diretamente"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 641,
+      "SelectedString": "OST_Schedules",
+      "NodeType": "ExtensionNode",
+      "Id": "cca76cf44efc4f0eabe14d1f4e176a02",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "749eef0f684841dba0d235fdfbc32123",
+          "Name": "Category",
+          "Description": "A categoria selecionada.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todas as categorias incorporadas."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "36969a6bef6a49d7aafaf35fea1767dc",
+      "Inputs": [
+        {
+          "Id": "3d4156fe8e7e473f9f2f3e855cd2ee3f",
+          "Name": "Category",
+          "Description": "Categoria",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dea1ebc70148441ca694b92c551369ff",
+          "Name": "Elements",
+          "Description": "Um tipo de elemento.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Obter todos os elementos da categoria especificada no modelo."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "dir+file;",
+      "Id": "2e43ab91b6024a2992ea61f0f5417191",
+      "Inputs": [
+        {
+          "Id": "5d8ece7801e14ecda2b26836774bccdd",
+          "Name": "dir",
+          "Description": "dir",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "36c0b16f624d418b946f73e620e5314e",
+          "Name": "file",
+          "Description": "file",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c2a9030f43d0407faeb3cfd164dfb182",
+          "Name": "",
+          "Description": "Valor da expressão na linha 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite que o código DesignScript seja criado diretamente"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\",
+      "Id": "e35d54625728434593eb651d547f1b55",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "bb7fb810a74647e190f3ce6f2ab74e1f",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Cria uma sequência de caracteres."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Schedules.ScheduleExportOptions.ByProperties@string,string,bool,string,bool",
+      "Id": "002f09ddb35c44a3b297e00dd62bbdbe",
+      "Inputs": [
+        {
+          "Id": "76702c0803d0470b9d1fe5653310a68c",
+          "Name": "columnHeaders",
+          "Description": "Como exportar cabeçalhos de coluna. O padrão é MultipleRows.\n\nstring\nValor padrão : \"MultipleRows\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fde9b499cd854d3ebce8294321114dec",
+          "Name": "fieldDelimiter",
+          "Description": "Como delimitar os campos. O padrão é Tab.\n\nstring\nValor padrão : \"\t\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "40616e5bb8f94566ae796c2d4508551e",
+          "Name": "headersFootersBlanks",
+          "Description": "Se deseja exportar cabeçalhos de grupo, rodapés e linhas em branco. O padrão é falso.\n\nbool\nValor padrão : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4ff757d0fc744fc689cada1fcb1b8463",
+          "Name": "textQualifier",
+          "Description": "Como qualificar campos de texto. O padrão é DoubleQuote.\n\nstring\nValor padrão : \"DoubleQuote\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8958c77648864fadb18abd692c126c0a",
+          "Name": "title",
+          "Description": "Se deseja ou não exportar o título da tabela. O padrão é falso.\n\nbool\nValor padrão : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b9dec10013364e149272c000d066aef0",
+          "Name": "exportOptions",
+          "Description": "Opções de exportação da tabela da vista.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Cria o elemento de Opções de exportação da tabela da vista.\n\nScheduleExportOptions.ByProperties (columnHeaders: string = \"MultipleRows\", fieldDelimiter: string = \"\t\", headersFootersBlanks: bool = false, textQualifier: string = \"DoubleQuote\", title: bool = false): ScheduleExportOptions"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "a0c0451447004fe2a8538e322ccfb5ec",
+      "Inputs": [
+        {
+          "Id": "b6ba7a117d844fb0be7f631def0a7f58",
+          "Name": "",
+          "Description": "Nó para avaliar.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "aa1bac0e817342108ff24675cbc4e959",
+          "Name": "",
+          "Description": "Observar conteúdo.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize a saída do nó."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "834d2f99366d455f9a35275920748d18",
+      "End": "3704f0a4cf3c40889a0285e81db30c58",
+      "Id": "247bdf03e2b14be79ad953a9b749456e"
+    },
+    {
+      "Start": "13db934207bc4e31ad92135af638aa74",
+      "End": "28725f392fec44e392c8b8de0314f67e",
+      "Id": "40cd6524d136446993e1276d5391462c"
+    },
+    {
+      "Start": "1030bdc4f51a43f5814f2da3ab1119b3",
+      "End": "36c0b16f624d418b946f73e620e5314e",
+      "Id": "8ad4842719644756b4a8be1e05266e72"
+    },
+    {
+      "Start": "ebc49f911fa5400a9f1265fbac5ddc12",
+      "End": "a45102ccdc254df0ad006027f844e174",
+      "Id": "3b6855d2b12049969addc4968f1c587c"
+    },
+    {
+      "Start": "749eef0f684841dba0d235fdfbc32123",
+      "End": "3d4156fe8e7e473f9f2f3e855cd2ee3f",
+      "Id": "c9fdd37ac1af487e83c9581174b0ea88"
+    },
+    {
+      "Start": "dea1ebc70148441ca694b92c551369ff",
+      "End": "639b7a0ae579403fb79f5007b35e4f51",
+      "Id": "8eb6f8b04ddc4e63bfa335111e6c3d5c"
+    },
+    {
+      "Start": "c2a9030f43d0407faeb3cfd164dfb182",
+      "End": "1f9432c0fc5e48a9a48910ceb8b9ca01",
+      "Id": "27b49ddd13ec48e99756b947b8439708"
+    },
+    {
+      "Start": "c2a9030f43d0407faeb3cfd164dfb182",
+      "End": "b6ba7a117d844fb0be7f631def0a7f58",
+      "Id": "62507d652e4440e4ad38b91d59fe0b1f"
+    },
+    {
+      "Start": "bb7fb810a74647e190f3ce6f2ab74e1f",
+      "End": "5d8ece7801e14ecda2b26836774bccdd",
+      "Id": "4a129409710444efa367060ea913ffc9"
+    },
+    {
+      "Start": "b9dec10013364e149272c000d066aef0",
+      "End": "5d8b7cd622ba4c1cb6bd27e68582b42c",
+      "Id": "5060c1426e694e809e03ac449250fb55"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.10.1.3976",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Visualização do plano de fundo",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "c5a109e931b84ca98214e92d0d664796",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 194.5,
+        "Y": -45.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "6a120071720342a384522b78bd557ff3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 509.5,
+        "Y": -26.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "461ffd68ead948cda08c49b1c8191fcf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 720.5,
+        "Y": 179.99999999999997
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "7b3ff7daf7e14225b6c08b74ee08a7a8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 960.5,
+        "Y": 173.99999999999997
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Wall Types",
+        "Id": "7b205623c8f549a78887a59f18ae3b89",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 623.5,
+        "Y": 357.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ScheduleView.Export",
+        "Id": "2ade6f2a010241eea7a1c8a01d0f7cfe",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1223.5795412984953,
+        "Y": 853.4950215411792
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Views",
+        "Id": "a10872d99a784f138a8193c21b319730",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 91.605004793361559,
+        "Y": 615.44951775195591
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "View Family Types",
+        "Id": "f0e3fd188d75444e8865adda72387762",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 61.273579075140333,
+        "Y": 722.977197266914
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "6564a720e6f146bcb2e43fecc8de7b4a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 571.95246454380617,
+        "Y": 770.77647460904439
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "cca76cf44efc4f0eabe14d1f4e176a02",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 77.152984311715386,
+        "Y": 881.50619712027276
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "36969a6bef6a49d7aafaf35fea1767dc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 335.04365693908517,
+        "Y": 811.10764324019874
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "2e43ab91b6024a2992ea61f0f5417191",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1019.1450418758178,
+        "Y": 733.08488387123316
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "e35d54625728434593eb651d547f1b55",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 742.53114922406439,
+        "Y": 649.64288431939281
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ScheduleExportOptions.ByProperties",
+        "Id": "002f09ddb35c44a3b297e00dd62bbdbe",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 908.01492265620664,
+        "Y": 1123.3212082719474
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "a0c0451447004fe2a8538e322ccfb5ec",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1732.3973903044032,
+        "Y": 843.972453120441
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "43cad5ff7e2245eab81f9c73a1c7fa24",
+        "Title": "Test1",
+        "Nodes": [
+          "c5a109e931b84ca98214e92d0d664796",
+          "6a120071720342a384522b78bd557ff3",
+          "461ffd68ead948cda08c49b1c8191fcf",
+          "7b3ff7daf7e14225b6c08b74ee08a7a8",
+          "7b205623c8f549a78887a59f18ae3b89"
+        ],
+        "Left": 184.5,
+        "Top": -98.0,
+        "Width": 960.0,
+        "Height": 548.0,
+        "FontSize": 36.0,
+        "InitialTop": -45.0,
+        "InitialHeight": 547.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 218.07251320428679,
+    "Y": 120.85368865674207,
+    "Zoom": 0.46017106552380888
+  }
+}
